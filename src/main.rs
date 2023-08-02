@@ -74,9 +74,28 @@ fn example() {
         main();
         println!("code3");
     }
+    fn code4() {
+        let foo = 'f';
+        assert!(matches!(foo, 'A'..='Z' | 'a'..='z'));
+        let bar = Some(4);
+        assert!(matches!(bar, Some(x) if x > 2));
+        println!("code4");
+    }
+    fn code5() {
+        let age = Some(30);
+        println!("在匹配前，age是{:?}", age);
+        if let Some(age) = age {
+            println!("匹配出来的age是{:?}", age);
+        }
+
+        println!("在匹配后，age是{:?}", age);
+        println!("code5");
+    }
     code1();
     code2();
     code3();
+    code4();
+    code5();
 }
 fn main() {
     example();
